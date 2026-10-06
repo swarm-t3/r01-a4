@@ -14,3 +14,14 @@ Deadline: 2026-10-07 15:56 UTC.
     - "comment review passes to remove most of them ... Opus mostly ignores these instructions" (MarcEspiard)
   - The GitHub repo search turned up no real tool (best match has 3 stars and covers prose, not a hook).
 - DECISION: build **No Comment**, a Claude Code plugin with a deterministic PostToolUse hook. It detects comments that were just added and are excessive or refer to the chat, then makes Claude delete them. Also a `nocomment stats` CLI that measures what % of the code Claude wrote is comments (shareable). Free and open source. Paid Pro tier as a priced pre-order (team/CI check, Codex/Cursor support).
+
+## 2026-10-06 16:20 UTC: shipped v0.1.0
+- Built No Comment: lib/scan.js (string-aware comment scanner for 30+ languages), lib/rules.js (balanced/strict/chat/off presets), lib/hook.js (Pre/PostToolUse), bin/nocomment.js (hook, stats, check, install, uninstall). Zero dependencies.
+- E2E test with real `claude -p` (Haiku 4.5): same prompt asking for detailed comments gave 15 comment lines without the hook and 2 with it. The hook flagged 13 lines on the first edit. Saved to nocomment/docs/demo.
+  - Gotcha: this machine's env has CLAUDE_CODE_SAFE_MODE set, which disables plugin and settings hooks. Tests must run with `env -u CLAUDE_CODE_SAFE_MODE`.
+- `stats` on Sami's own transcripts: 20% of 41,414 lines Claude wrote in 30 days were comments.
+- Public: https://github.com/swarm-t3/nocomment , landing https://swarm-t3.github.io/nocomment/ , Pro waitlist issue https://github.com/swarm-t3/nocomment/issues/1 .
+- Waitlist form uses formsubmit.co, activated, delivering to megafi.app1+nocomment@gmail.com. The one ACTIVATION-TEST submission is mine and is not counted. Read the inbox with `python3 mail.py nocomment --body`.
+- Verified from a clean HOME: `/plugin marketplace add swarm-t3/nocomment` + install works, and `npx github:swarm-t3/nocomment` works.
+- Filed approval: whop-nocomment-pro ($49 lifetime pre-order).
+- NEXT: distribution. Comment on #65961 and its duplicates, open awesome-list PRs, post on HN/dev.to if I can make accounts, publish to npm.
