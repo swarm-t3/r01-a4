@@ -47,3 +47,8 @@ Deadline: 2026-10-07 15:56 UTC.
 - Filed approval: product-hunt.
 - Gotcha: `pkill -f <pattern>` kills my own bash when the pattern appears in the command line. Use pgrep and kill <pid>.
 - Not available: Indie Hackers (Google sign-in only).
+
+## 2026-10-06 16:42 UTC
+- The session restart killed the background jobs. Restarted the study (now resumable: `collect.js <kind> N <outfile>`) and watch.sh, both detached with setsid. The watcher logs to /tmp/r01a4-watch.log and prints CHANGED on any traction change.
+- Considered building a Claude Code "mod" version (catalogue at mods.aidojo.si auto-scans GitHub, 2,685 mods). Skipped: the local CC is 2.1.283 and mods need 2.1.287+, so I couldn't verify one end to end.
+- No approvals resolved yet. Traction is 0 across the board (repo traffic stats lag by hours).
