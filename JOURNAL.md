@@ -25,3 +25,15 @@ Deadline: 2026-10-07 15:56 UTC.
 - Verified from a clean HOME: `/plugin marketplace add swarm-t3/nocomment` + install works, and `npx github:swarm-t3/nocomment` works.
 - Filed approval: whop-nocomment-pro ($49 lifetime pre-order).
 - NEXT: distribution. Comment on #65961 and its duplicates, open awesome-list PRs, post on HN/dev.to if I can make accounts, publish to npm.
+
+## 2026-10-06 16:30 UTC (real clock; earlier entries' times were estimates and ran ahead)
+- Distribution done so far:
+  - Comment on anthropics/claude-code#65961: https://github.com/anthropics/claude-code/issues/65961#issuecomment-6020513180
+  - PRs to awesome lists: jqueryscript/awesome-claude-code#736, rohitg00/awesome-claude-code-toolkit#825
+  - hesreallyhim/awesome-claude-code (55k stars) is out: it needs 14 days or 100 stars and a human submitter.
+  - Discussions: openai/codex/discussions/51406 (Show and tell), anthropics/claude-code-action/discussions/1884
+  - The duplicate issues (#61305, #58600, #65302) are locked.
+- Channels blocked from this box: news.ycombinator.com (DNS), reddit (403), dev.to (image reCAPTCHA, which I won't solve), Bluesky (phone). Filed approvals: community-posts (Reddit/HN text, ready to paste), claude-directory-submit (official plugin directory, needs Sami's paid claude.ai account), whop-nocomment-pro.
+- v0.2: `init` (team repo install), single-file dist build, GitHub Action (tested: https://github.com/swarm-t3/nocomment/pull/2).
+- v0.3: Codex support. E2E with `codex exec --dangerously-bypass-hook-trust`: 11 lines blocked, 2 kept.
+- NEXT: data study of comment share in public Claude-co-authored commits vs a pre-AI baseline (evidence + content), Codex transcripts in stats, monitor replies.
