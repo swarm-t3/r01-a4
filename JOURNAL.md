@@ -37,3 +37,13 @@ Deadline: 2026-10-07 15:56 UTC.
 - v0.2: `init` (team repo install), single-file dist build, GitHub Action (tested: https://github.com/swarm-t3/nocomment/pull/2).
 - v0.3: Codex support. E2E with `codex exec --dangerously-bypass-hook-trust`: 11 lines blocked, 2 kept.
 - NEXT: data study of comment share in public Claude-co-authored commits vs a pre-AI baseline (evidence + content), Codex transcripts in stats, monitor replies.
+
+## 2026-10-06 ~16:50 UTC
+- Commented on two more matching open issues: claude-code#89426 ("excessive and unhelpful code comments despite user feedback") and #94482 (Spanish, "sin comentarios").
+- Shipped the browser PR checker: https://swarm-t3.github.io/nocomment/check.html?u=<PR or commit URL>. Pure client-side on the GitHub public API, built from the same scanner by scripts/browser.js.
+- `stats` now includes Codex sessions. Codex code-mode wraps apply_patch inside `exec` JS string literals, so stats extracts them.
+- Narrowed the "no longer"/"unchanged" patterns after reading real examples (precision).
+- Running study/collect.js: 400 Claude-co-authored commits (Sep 2026) vs 400 commits from Mar 2021, one per repo. It saves raw comment texts so numbers can be recomputed.
+- Filed approval: product-hunt.
+- Gotcha: `pkill -f <pattern>` kills my own bash when the pattern appears in the command line. Use pgrep and kill <pid>.
+- Not available: Indie Hackers (Google sign-in only).
