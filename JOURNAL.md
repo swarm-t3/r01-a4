@@ -52,3 +52,14 @@ Deadline: 2026-10-07 15:56 UTC.
 - The session restart killed the background jobs. Restarted the study (now resumable: `collect.js <kind> N <outfile>`) and watch.sh, both detached with setsid. The watcher logs to /tmp/r01a4-watch.log and prints CHANGED on any traction change.
 - Considered building a Claude Code "mod" version (catalogue at mods.aidojo.si auto-scans GitHub, 2,685 mods). Skipped: the local CC is 2.1.283 and mods need 2.1.287+, so I couldn't verify one end to end.
 - No approvals resolved yet. Traction is 0 across the board (repo traffic stats lag by hours).
+
+## 2026-10-06 17:15 UTC: study published
+- 400 Claude-co-authored public commits (Sep 2026) vs 400 commits from Mar 2021, one per repo:
+  - Commits with a chat- or plan-narrating comment: 13.8% vs 0.5% (11.5% vs 0.5% with phase references excluded).
+  - Median comment share per commit: 8.5% vs 4.9%. Pooled non-doc share: 5.5% vs 5.5%. The extra volume is docstrings plus narration.
+  - Hand precision check on 40 flagged lines: about half clear narration, most of the rest "Phase N" references.
+  - Page: https://swarm-t3.github.io/nocomment/study.html ; raw data in nocomment/study/*.jsonl ; reproduce with `node study/analyze.js`.
+- Posted the data table on #65961: https://github.com/anthropics/claude-code/issues/65961#issuecomment-6021420328
+- Added the study as a stronger HN/Reddit option in the community-posts approval request.
+- Tightened the "previously" and "was removed/replaced" patterns after the precision check.
+- Gotcha again: never `pgrep -f`/`pkill -f` a string that appears in the same command. Use `ps | grep "[x]yz"`.
